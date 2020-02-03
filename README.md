@@ -8,7 +8,7 @@ Backend for water-my-plants-2
 2) Create a "New Request".
 3) Select a "GET" request for now.
 4) Use `localhost:4000` for the address.
-5) OR if you are using Heroku, use this link for the address instead - "https://build-week-backend-test.herokuapp.com/".
+5) OR if you are using Heroku, use this link for the address instead - "https://water-my-plants-2.herokuapp.com".
 6) Send the request.
 7) You should get the message "welcome to the danger zone!".
 
@@ -25,7 +25,7 @@ JSON requirements for users:
 }
 ```
 
-1) At the end of `localhost:4000` (or the Heroku link "https://build-week-backend-test.herokuapp.com/") in your address, put `api/auth` to use authorization for these routes. For example `localhost:4000/api/auth`.
+1) At the end of `localhost:4000` (or the Heroku link "https://water-my-plants-2.herokuapp.com") in your address, put `api/auth` to use authorization for these routes. For example `localhost:4000/api/auth`.
 For all of the following instructions you may replace `localhost:4000` with the Herokuu link if you want to use the hosted server.
 
 ## To Register
