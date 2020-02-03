@@ -82,8 +82,8 @@ For all of the following instructions you may replace `localhost:4000` with the 
 2) To update or add a new plant you will need to use "POST" or "PUT" as before but with the following JSON data -
 ```
 {
-	"nickname": "Enter nickname here",
-	"species": "Enter species here",
+  "nickname": "Enter nickname here",
+  "species": "Enter species here",
   "water_schedule": "Enter water schedule here in this format of for date and time - YYYY-MM-DD HH:MM"
 }
 ```
