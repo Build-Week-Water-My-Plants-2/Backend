@@ -1,7 +1,9 @@
 const express = require('express'); //importing a CommonJS module
 const helmet = require('helmet'); //yarn add helmet
 const cors = require('cors');
-// const authRouter = require('../routers/auth-router');
+const authRouter = require('../routers/auth-router');
+const plantsRouter = require('../routers/plants-router');
+const usersRouter = require('../routers/users-router');
 const server = express(); //creates the server
 
 //global middleware
@@ -15,6 +17,8 @@ server.get('/', (req, res) => {
 });
 
 //routes
-// server.use('/api/auth', authRouter);
+server.use('/api/auth', authRouter);
+server.use('/api/plants', plantsRouter);
+server.use('/api/users', usersRouter);
 
 module.exports = server
