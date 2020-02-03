@@ -94,43 +94,43 @@ For all of the following instructions you may replace `localhost:4000` with the 
 
 # All Endpoints in Postman
 
-Test Server
+Test Server -
 GET `localhost:4000`
 
-Register user
+Register user -
 POST `localhost:4000/api/auth/register`
 
-Login user
+Login user -
 POST `localhost:4000/api/auth/login`
 
-Get a list of users
+Get a list of users -
 GET `localhost:4000/api/users`
 
-Get a specific user by id
+Get a specific user by id -
 GET `localhost:4000/api/users/:id`
 
-Update user properties
+Update user properties -
 PUT `localhost:4000/api/users/:id`
 
-Delete a user from the database
+Delete a user from the database -
 DELETE `localhost:4000/api/users/:id`
 
-Get a list of all a specific user's plants
+Get a list of all a specific user's plants -
 GET `localhost:4000/api/users/:id/plants`
 
-Add a plant to a specific user's account
+Add a plant to a specific user's account -
 POST `localhost:4000/api/users/:id/plants`
 
-Get a list of all plants in the database
+Get a list of all plants in the database -
 GET `localhost:4000/api/plants`
 
-Get a specific plant by id
+Get a specific plant by id -
 GET `localhost:4000/api/plants/:id`
 
-Update plant properties
+Update plant properties -
 PUT `localhost:4000/api/plants/:id`
 
-Delete a plant from the database
+Delete a plant from the database -
 DELETE `localhost:4000/api/plants/:id`
 
 # LOGIN DUMMY DATA
