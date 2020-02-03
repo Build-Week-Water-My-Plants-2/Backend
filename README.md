@@ -134,7 +134,7 @@ Delete a plant from the database
 DELETE `localhost:4000/api/plants/:id`
 
 # LOGIN DUMMY DATA
-
+```
 {
   "username": "mario"
   "password": "mushroom"
@@ -159,7 +159,7 @@ DELETE `localhost:4000/api/plants/:id`
   "username": "pikachu"
   "password": "pikapika"
 }
-
+```
 # Design Schema for database
 
 ![Screenshot](table-schema.PNG)
