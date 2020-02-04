@@ -28,7 +28,7 @@ function findById(id) {
 function findPlantsByUser(userId) {
   return db('users')
     .join('plants', 'users.id', 'plants.user_id')
-    .select('plants.id', 'plants.nickname', 'plants.species', 'water_schedule', 'last_watered')
+    .select('plants.id', 'plants.nickname', 'plants.species', 'water_schedule', 'last_watered', 'plants.image_url')
     .where('users.id', userId);
 }
 
