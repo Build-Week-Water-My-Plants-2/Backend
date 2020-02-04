@@ -1,4 +1,4 @@
-const db = require('../data/dbConfig.js');
+ const users = require('../data/schema/UserSchema');
 
 module.exports = {
   find,
@@ -10,38 +10,25 @@ module.exports = {
 }
 
 function find() {
-  return db('users')
-  // .select('id', 'username', 'password');
+  return users.where()
 }
 
 function findBy(filter) {
-  return db('users')
-    .where(filter);
+  return users.where(filter)
 }
 
 function findById(id) {
-  return db('users')
-    .where({ id })
-    .first();
+  return users.findById(id)
 }
 
 function add(user) {
-  return db('users')
-    .insert(user, 'id')
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
-    });
+  return users.insertMany(user)
 }
 
 function update(id, changes) {
-  return db('users')
-    .where({ id })
-    .update(changes);
+  return users.findByIdAndUpdate(id,changes)
 }
 
 function remove(id) {
-  return db('users')
-      .where('id', id)
-      .del();
-}
+  return users.findByIdAndDelete(id)
+} 

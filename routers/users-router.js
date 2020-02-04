@@ -71,7 +71,7 @@ router.delete('/:id', restricted, validateUserId, (req, res) => {
 // *****************************************
 // GET a list of plants for a specific user
 // *****************************************
-router.get('/:id/plants', restricted, validateUserId, (req, res) => {
+router.get('/:id/plants', restricted,validateUserId, (req, res) => {
   console.log(req.params.id);
   Plants.findPlantsByUser(req.params.id)
     .then(user => {

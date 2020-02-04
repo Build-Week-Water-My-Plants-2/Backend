@@ -1,5 +1,5 @@
-const db = require('../data/dbConfig.js');
-
+const plants = require("../data/schema/PlantSchema");
+const users = require("../data/schema/UserSchema");
 module.exports = {
   find,
   findBy,
@@ -8,47 +8,42 @@ module.exports = {
   add,
   update,
   remove
-}
+};
 
 function find() {
-  return db('plants').select('id', 'nickname', 'species', 'water_schedule', 'last_watered', 'user_id');
+  return plants
+    .where()
+    .select("id nickname species water_schedule last_watered");
 }
 
-function findBy(filter) {
-  return db('plants')
-    .where(filter);
+function findBy(plant) {
+  return plants.where(plant);
 }
 
 function findById(id) {
-  return db('plants')
-    .where({ id })
-    .first();
+  return plants.findById(id);
 }
 
-function findPlantsByUser(userId) {
-  return db('users')
-    .join('plants', 'users.id', 'plants.user_id')
-    .select('plants.id', 'plants.nickname', 'plants.species', 'water_schedule', 'last_watered')
-    .where('users.id', userId);
+async function findPlantsByUser(userId) {
+  const result = await users
+    .aggregate()
+    .lookup({
+      from: "flowers",
+      localField: "_id",
+      foreignField: "user_id",
+      as: "plants"
+    })
+    return result.find(user => user._id == userId)
 }
 
 function add(plant) {
-  return db('plants')
-    .insert(plant, 'id')
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
-    });
+  return plants.insertMany(plant)
 }
 
 function update(id, changes) {
-  return db('plants')
-    .where({ id })
-    .update(changes);
+  return plants.findByIdAndUpdate(id,changes)
 }
 
 function remove(id) {
-  return db("plants")
-      .where("id", id)
-      .del();
+  return plants.findByIdAndDelete(id)
 }
