@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function find() {
-  return db('plants').select('id', 'nickname', 'species', 'water_schedule', 'last_watered', 'user_id');
+  return db('plants').select('id', 'nickname', 'species', 'water_schedule', 'last_watered', 'user_id', 'image_url');
 }
 
 function findBy(filter) {
