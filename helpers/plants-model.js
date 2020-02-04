@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function find() {
-  return db('plants').select('id', 'nickname', 'species', 'water_schedule', 'last_watered', 'user_id');
+  return db('plants');
 }
 
 function findBy(filter) {
@@ -28,7 +28,7 @@ function findById(id) {
 function findPlantsByUser(userId) {
   return db('users')
     .join('plants', 'users.id', 'plants.user_id')
-    .select('plants.id', 'plants.nickname', 'plants.species', 'water_schedule', 'last_watered')
+    .select('plants.id', 'plants.nickname', 'plants.species', 'plants.water_schedule', 'plants.frequency', 'plants.last_watered', 'plants.image_url')
     .where('users.id', userId);
 }
 

@@ -87,6 +87,14 @@ For all of the following instructions you may replace `localhost:4000` with the 
   "water_schedule": "Enter water schedule here in this format of for date and time - YYYY-MM-DD HH:MM"
 }
 ```
+3) Optional data for plants includes the following:
+```
+{
+  "frequency": "Enter the number of days you want to pass before being reminded to water plants",
+  "last_watered": "Enter the last day and time you watered your plants in this format - YYYY-MM-DD HH:MM",
+  "image_url": "Enter an image url you'd like associated with your plant"
+}
+```
 
 ## Get All Plants for a Specific User
 
