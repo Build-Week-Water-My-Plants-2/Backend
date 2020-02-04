@@ -9,7 +9,9 @@ exports.up = function(knex) {
         .notNullable();
       tbl.datetime('water_schedule')
         .notNullable();
-      tbl.date('last_watered');
+      tbl.datetime('last_watered');
+      tbl.integer('frequency')
+        .defaultTo(0);
       tbl.string('image_url');
       tbl.integer('user_id')
         .unsigned()
