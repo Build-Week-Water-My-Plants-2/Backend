@@ -103,43 +103,65 @@ For all of the following instructions you may replace `localhost:4000` with the 
 # All Endpoints in Postman
 
 Test Server -
-GET `localhost:4000`
+GET `localhost:4000` -
+Success: 200, Error: 500
 
 Register user -
-POST `localhost:4000/api/auth/register`
+POST `localhost:4000/api/auth/register` -
+Success: 201, Error: 500
 
 Login user -
-POST `localhost:4000/api/auth/login`
+POST `localhost:4000/api/auth/login` -
+Success: 200, Error: 500
 
 Get a list of users -
-GET `localhost:4000/api/users`
+GET `localhost:4000/api/users` -
+Success: 200, Error: 500
 
 Get a specific user by id -
-GET `localhost:4000/api/users/:id`
+GET `localhost:4000/api/users/:id` -
+Success: 200, Error: 500
 
 Update user properties -
-PUT `localhost:4000/api/users/:id`
+PUT `localhost:4000/api/users/:id` -
+Success: 200, Error: 500
 
 Delete a user from the database -
-DELETE `localhost:4000/api/users/:id`
+DELETE `localhost:4000/api/users/:id` -
+Success: 200, Error: 500
 
 Get a list of all a specific user's plants -
-GET `localhost:4000/api/users/:id/plants`
+GET `localhost:4000/api/users/:id/plants` -
+Success: 200, Error: 500
 
 Add a plant to a specific user's account -
-POST `localhost:4000/api/users/:id/plants`
+POST `localhost:4000/api/users/:id/plants` -
+Success: 201, Error: 500
 
 Get a list of all plants in the database -
-GET `localhost:4000/api/plants`
+GET `localhost:4000/api/plants` -
+Success: 200, Error: 500
 
 Get a specific plant by id -
-GET `localhost:4000/api/plants/:id`
+GET `localhost:4000/api/plants/:id` -
+Success: 200, Error: 500
 
 Update plant properties -
-PUT `localhost:4000/api/plants/:id`
+PUT `localhost:4000/api/plants/:id` -
+Success: 200, Error: 500
 
 Delete a plant from the database -
-DELETE `localhost:4000/api/plants/:id`
+DELETE `localhost:4000/api/plants/:id` -
+Success: 200, Error: 500
+
+Missing text fields / invalid login credentials - 
+Error: 400
+
+Missing / invalid token
+Error: 401
+
+Invalid user or plant id
+Error: 400
 
 # LOGIN DUMMY DATA
 ```
