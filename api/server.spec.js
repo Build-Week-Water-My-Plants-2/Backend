@@ -191,27 +191,27 @@ describe('server.js', () => {
   //********************
   //DELETE USER
   //********************
-  describe('DELETE /api/users/:id', () => {
-    it('should return 200 OK status code when successfully deleted', async () => {
-      // register a new user
-      res = await request(server)
-        .post('/api/auth/register')
-        .send({
-          username: 'banjo-kazooie',
-          password: 'jiggy',
-          email: 'banjo64@spiralmountain.com',
-          phone_number: '9482757223'
-        });
-      expect(res.status).toEqual(201);
-      // handle the token
-      const token = res.body.token;
-      expect(token.length).toBeGreaterThan(20);
-      // delete the user by id
-      res = await request(server)
-        .delete('/api/users/1')
-      expect(res.status).toEqual(200);
-    })
-  })
+  // describe('DELETE /api/users/:id', () => {
+  //   it('should return 200 OK status code when successfully deleted', async () => {
+  //     // register a new user
+  //     res = await request(server)
+  //       .post('/api/auth/register')
+  //       .send({
+  //         username: 'banjo-kazooie',
+  //         password: 'jiggy',
+  //         email: 'banjo64@spiralmountain.com',
+  //         phone_number: '9482757223'
+  //       });
+  //     expect(res.status).toEqual(201);
+  //     // handle the token
+  //     const token = res.body.token;
+  //     expect(token.length).toBeGreaterThan(20);
+  //     // delete the user by id
+  //     res = await request(server)
+  //       .delete('/api/users/1')
+  //     expect(res.status).toEqual(200);
+  //   })
+  // })
   //********************
   //GET USER'S PLANTS
   //********************
