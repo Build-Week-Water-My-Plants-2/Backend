@@ -37,7 +37,7 @@ router.post('/login', (req, res) => {
       if (user && bc.compareSync(password, user.password)) {
         const token = generateToken(user);
 
-        res.status(200).json({ message: `Logged in! Welcome ${user.username}!`, token }); //attaches token as part of the response
+        res.status(200).json({ message: `Logged in! Welcome ${user.username}!`, user_id: user.id, token }); //attaches token as part of the response
       } else {
         res.status(401).json({ message: 'The login credentials provided are invalid' });
       }
